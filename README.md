@@ -1,4 +1,4 @@
-AWSBILLING
+awsbilling
 ==========
 
 This is a set of tools for managing the Amazon Web Services billing.

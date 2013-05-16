@@ -1,2 +1,7 @@
 /reports
+
 /awsbilling.cfg
+
+.project
+.pydevproject
+.settings
