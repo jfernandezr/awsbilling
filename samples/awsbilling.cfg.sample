@@ -1,0 +1,9 @@
+[Credentials]
+aws_access_key_id = 7GLPAPPAYOMXUTA3IAJY
+aws_secret_access_key = IHGKWPpmu8nMrjjIFSTiCSudAIhAy00NDsFNhstC
+
+[ConsolidatedBilling]
+reports_dir = reports
+account_id = 297300232729
+bucket = billing-bucket
+tag = Client

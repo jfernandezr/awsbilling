@@ -3,12 +3,59 @@ AWSBILLING
 
 This is a set of tools for managing the Amazon Web Services billing.
 
+cbilling_report.py
+--------------------
+
+This is a tool used to split the AWS costs by a specific AWS tag
+by using the consolidated billing facility. It downloads the reports from the
+S3 bucket and generates a report sharing the costs by specified tag.
+
+### Usage
+
+<pre>
+usage: cbilling_report.py [-h] [-c config_file] [-V] [YYYY-MM]
+
+positional arguments:
+  YYYY-MM               year and month of the report [default: current month]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c config_file, --config config_file
+                        configuration file [default: awsbilling.cfg]
+  -V, --version         show program's version number and exit
+</pre>
+
+This script expects a `awsbilling.cfg` file located on the working directory or
+supplied via the `--config` parameter. This configuration file is a INI-style
+file with the following data
+
+<pre>
+[Credentials]
+aws_access_key_id = 7GLPAPPAYOMXUTA3IAJY
+aws_secret_access_key = IHGKWPpmu8nMrjjIFSTiCSudAIhAy00NDsFNhstC
+
+[ConsolidatedBilling]
+reports_dir = reports
+account_id = 297300232729
+bucket = billing-bucket
+tag = Client
+</pre>
+
+The script will download the reports from S3 into the `reports_dir` directory and
+parses them, generating a JSON output.
+
+NOTE: Usually, in the generated reports, there is a `Amazon CloudFront` cost that
+shows up in the undefined billing group. As of the current date, there is no way
+of tagging CloudFront. The recommendation is to discard that value and use the
+`cloudfront_report.py` tool to split the costs by resource.
+
+
 cloudfront_report.py
 --------------------
 
 This is a tool used to split the AWS CloudFront costs used by different resources.
 It parses an AWS CloudFront monthly usage report XML file, gets each resource usages
- and calculates the costs against an external pricing JSON file.
+and calculates the costs against an external pricing JSON file.
 
 ### Usage
 
