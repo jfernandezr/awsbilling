@@ -3,8 +3,8 @@ AWSBILLING
 
 This is a set of tools for managing the Amazon Web Services billing.
 
-cf_report.py
-------------
+cloudfront_report.py
+--------------------
 
 This is a tool used to split the AWS CloudFront costs used by different resources.
 It parses an AWS CloudFront monthly usage report XML file, gets each resource usages
@@ -13,7 +13,7 @@ It parses an AWS CloudFront monthly usage report XML file, gets each resource us
 ### Usage
 
 <pre>
-cf_report.py [-h] [-V] [-v] [-p pricing_file] report_file
+cloudfront_report.py [-h] [-V] [-v] [-p pricing_file] report_file
 
 positional arguments:
   report_file      CloudFront XML Usage Report file

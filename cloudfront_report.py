@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # encoding: utf-8
 '''
-cf_report -- AWS CloudFront cost reporting tool
+cloudfront_report -- AWS CloudFront cost reporting tool
 
-cf_report is a tool used to split the AWS CloudFront costs used by different resources
+cloudfront_report is a tool used to split the AWS CloudFront costs used by different resources
 
 @author:     Juan Fernandez-Rebollos
         
@@ -197,7 +197,7 @@ if __name__ == "__main__":
     if PROFILE:
         import cProfile
         import pstats
-        profile_filename = 'cf_report_profile.txt'
+        profile_filename = 'cloudfront_report_profile.txt'
         cProfile.run('main()', profile_filename)
         statsfile = open("profile_stats.txt", "wb")
         p = pstats.Stats(profile_filename, stream=statsfile)
