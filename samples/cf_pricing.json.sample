@@ -1,0 +1,9 @@
+{
+    "GET.EU-DataTransfer-Out-Bytes": [1073741824, 0.120],
+    "GET.EU-Requests-Tier1": [10000, 0.009],
+    "GET.EU-Requests-Tier2-HTTPS": [10000, 0.012],
+    
+    "GET.US-DataTransfer-Out-Bytes": [1073741824, 0.120],
+    "GET.US-Requests-Tier1": [10000, 0.0075],
+    "GET.US-Requests-Tier2-HTTPS": [10000, 0.010]
+}
